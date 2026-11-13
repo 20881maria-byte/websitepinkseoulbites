@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pink Seoul Bites — Kontak &amp; Pesan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Quicksand:wght@600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="index.html">
+        <div class="brand-logo">
+          <img src="https://lh3.googleusercontent.com/aida/ALJJyrBtdk_fqr7uC6SEBLY6_dywAt-elWcdIgrxGIhVssE0nt0I202XYrdADcmVh1sS3Vv-WyNi9DauBvzAkY-F3KMTolRkdTwY1ZMUSkyx2gv9Jg2FRQCtpUN4zXnsNVf9x581GCtIC6RHcG79aq15IK8iZFpsGxDrH5TlpoqlLJAUYK2XYEGb9JcDeaYZYQdLCyfOA_QD_4D9ht1nBUrPGhp2KuDiothgJq4Up60tlegMzIX6MADg2bVsbis" alt="Profile">
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">Pink Seoul Bites</span>
+          <span class="brand-tagline">Est. 2022 • Resep Penuh Kenangan</span>
+        </div>
+      </a>
+
+      <nav class="main-nav">
+        <a class="nav-link" href="index.html">Beranda</a>
+        <a class="nav-link" href="menu.html">Menu</a>
+        <a class="nav-link" href="tentang-kami.html">Tentang Kami</a>
+        <a class="nav-link" href="tim-kami.html">Tim Kami</a>
+        <a class="nav-link active" href="kontak.html">Kontak &amp; Pesan</a>
+      </nav>
+
+      <div class="header-actions">
+        <a class="btn btn--tertiary" href="kontak.html">
+          <span class="material-symbols-outlined">shopping_bag</span>
+          <span>Pesan Sekarang</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main class="page">
+    <div class="page-inner">
+
+      <!-- ============ CONTACT WRAPPER ============ -->
+      <div class="contact-wrap">
+
+        <!-- Ambient glow -->
+        <div class="contact-glow" aria-hidden="true"></div>
+
+        <!-- ============ CONTACT HERO ============ -->
+        <section class="contact-hero">
+          <div class="contact-hero-inner">
+            <div class="contact-pill">
+              <span class="material-symbols-outlined">local_florist</span>
+              <span class="contact-pill-text">Dapur Hangat &amp; Layanan Ramah</span>
+            </div>
+
+            <h1 class="page-title">Yuk, Pesan Sekarang!</h1>
+
+            <p class="page-subtitle">
+              Kirim pesanan makanan Korea favoritmu langsung dari dapur kami ke mejamu, atau hubungi kami untuk pertanyaan, reservasi, &amp; pesanan katering.
+            </p>
+
+            <div class="contact-trust">
+              <span class="trust-badge trust-badge--secondary">
+                <span class="material-symbols-outlined">verified</span>
+                <span>100% Halal Ingredients</span>
+              </span>
+              <span class="trust-badge trust-badge--tertiary">
+                <span class="material-symbols-outlined">timer</span>
+                <span>Dimasak Fresh Tiap Pesanan</span>
+              </span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ TWO-COLUMN LAYOUT ============ -->
+        <div class="contact-grid">
+
+          <!-- ============ ORDER FORM ============ -->
+          <section class="order-panel">
+            <div class="order-panel-top-bar" aria-hidden="true"></div>
+
+            <div class="order-panel-header">
+              <div class="order-panel-header-left">
+                <div class="order-panel-icon">
+                  <span class="material-symbols-outlined">soup_kitchen</span>
+                </div>
+                <div>
+                  <h2 class="order-panel-title">Formulir Pemesanan Dapur</h2>
+                  <p class="order-panel-subtitle">Isi detail santapanmu, kami siapkan penuh kehangatan</p>
+                </div>
+              </div>
+              <span class="order-panel-badge">Fast Response</span>
+            </div>
+
+            <form class="order-form" id="orderForm" onsubmit="event.preventDefault(); submitToWhatsApp();">
+
+              <!-- Nama & WhatsApp -->
+              <div class="form-row form-row--2col">
+                <div class="form-group">
+                  <label class="form-label" for="customerName">
+                    <span class="material-symbols-outlined form-label-icon form-label-icon--primary">person</span>
+                    Nama Pemesan
+                  </label>
+                  <input class="form-input" id="customerName" type="text" placeholder="Kak Bulan Pamungkas" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label" for="customerPhone">
+                    <span class="material-symbols-outlined form-label-icon form-label-icon--tertiary">chat</span>
+                    Nomor WhatsApp
+                  </label>
+                  <input class="form-input" id="customerPhone" type="tel" placeholder="0812-3456-7890" required>
+                </div>
+              </div>
+
+              <!-- Menu & Porsi -->
+              <div class="form-row form-row--menu">
+                <div class="form-group form-group--menu">
+                  <label class="form-label" for="menuSelection">
+                    <span class="material-symbols-outlined form-label-icon form-label-icon--primary">restaurant_menu</span>
+                    Pilihan Menu Favorit
+                  </label>
+                  <div class="select-wrap">
+                    <select class="form-input form-select" id="menuSelection">
+                      <option value="Tteokbokki Keju Meleleh (Rp 28.000)">🍢 Tteokbokki Keju Meleleh — Rp 28.000</option>
+                      <option value="Jajangmyeon Otentik Seoul (Rp 32.000)">🍜 Jajangmyeon Otentik Seoul — Rp 32.000</option>
+                      <option value="Bibimbap Mangkok Hangat (Rp 30.000)">🍚 Bibimbap Mangkok Hangat — Rp 30.000</option>
+                      <option value="Paket Lengkap Kenangan Ibu (Rp 85.000)">👑 Paket Lengkap Kenangan Ibu — Rp 85.000</option>
+                    </select>
+                    <span class="material-symbols-outlined select-arrow">expand_more</span>
+                  </div>
+                </div>
+
+                <div class="form-group form-group--portion">
+                  <label class="form-label">
+                    <span class="material-symbols-outlined form-label-icon form-label-icon--secondary">counter_1</span>
+                    Porsi
+                  </label>
+                  <div class="portion-control">
+                    <button class="portion-btn" type="button" onclick="adjustPortion(-1)">-</button>
+                    <span class="portion-value" id="portionDisplay">1</span>
+                    <input id="portionCount" type="hidden" value="1">
+                    <button class="portion-btn" type="button" onclick="adjustPortion(1)">+</button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Catatan -->
+              <div class="form-group">
+                <label class="form-label form-label--spread" for="orderNotes">
+                  <span>
+                    <span class="material-symbols-outlined form-label-icon form-label-icon--primary">edit_note</span>
+                    Level Kepedasan &amp; Catatan Khusus
+                  </span>
+                  <span class="form-label-optional">Opsional</span>
+                </label>
+                <textarea class="form-input form-textarea" id="orderNotes" rows="2"
+                  placeholder="Contoh: Saus gochujang dipisah / Extra pedas / Tambah Mozzarella &amp; Telur"></textarea>
+              </div>
+
+              <!-- Metode Pengiriman -->
+              <div class="form-group">
+                <label class="form-label">
+                  <span class="material-symbols-outlined form-label-icon form-label-icon--tertiary">local_shipping</span>
+                  Metode Pengiriman
+                </label>
+                <div class="delivery-methods" id="deliveryMethods">
+
+                  <label class="delivery-option delivery-option--active" data-delivery="delivery">
+                    <input class="delivery-input" type="radio" name="deliveryMethod" value="Pesan Antar (Grab/Gojek/Kurir)" checked>
+                    <span class="delivery-radio delivery-radio--active">
+                      <span class="material-symbols-outlined">check</span>
+                    </span>
+                    <span class="delivery-text">
+                      <span class="delivery-title">Pesan Antar</span>
+                      <span class="delivery-sub">Grab / Gojek / Kurir</span>
+                    </span>
+                  </label>
+
+                  <label class="delivery-option" data-delivery="pickup">
+                    <input class="delivery-input" type="radio" name="deliveryMethod" value="Ambil Sendiri di Dapur">
+                    <span class="delivery-radio">
+                      <span class="material-symbols-outlined">check</span>
+                    </span>
+                    <span class="delivery-text">
+                      <span class="delivery-title">Ambil Sendiri</span>
+                      <span class="delivery-sub">Pick-up di Dapur Pink</span>
+                    </span>
+                  </label>
+
+                </div>
+              </div>
+
+              <!-- Alamat -->
+              <div class="form-group address-wrapper" id="addressWrapper">
+                <label class="form-label" for="deliveryAddress">
+                  <span class="material-symbols-outlined form-label-icon form-label-icon--primary">pin_drop</span>
+                  Alamat Pengantaran
+                </label>
+                <input class="form-input" id="deliveryAddress" type="text"
+                  placeholder="Jl. Mawar No. 12, Kost Putri Asri, Kamar 4B (Patokan depan minimarket)">
+              </div>
+
+              <!-- Submit -->
+              <div class="form-submit">
+                <button class="btn btn--tertiary btn--full btn--lg" type="submit">
+                  <span class="material-symbols-outlined">chat</span>
+                  <span>Kirim Pesanan via WhatsApp 💬</span>
+                </button>
+                <p class="form-hint">
+                  <span class="material-symbols-outlined">lock</span>
+                  <span>Pesanan akan langsung diteruskan ke WhatsApp resmi kami untuk konfirmasi total dan ongkos kirim secara instan.</span>
+                </p>
+              </div>
+
+            </form>
+          </section>
+
+          <!-- ============ CONTACT INFO CARD ============ -->
+          <section class="contact-info-panel">
+
+            <div class="contact-info-card">
+              <div class="contact-info-bg" aria-hidden="true"></div>
+
+              <div class="qr-badge">
+                <span class="material-symbols-outlined">qr_code_scanner</span>
+              </div>
+
+              <span class="qr-label">Scan untuk hubungi kami</span>
+              <h3 class="qr-title">Hubungi &amp; Kunjungi Dapur</h3>
+
+              <div class="qr-frame">
+                <div class="qr-image-wrap">
+                  <img class="qr-image"
+                       src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMx3KteChbTOe1-lpNTCQW5m3xJpsd5TrL-PHU1Az-fQy11n3KdyhpgCOcKdQW44Tr8bP-NCBNlfT7G3nPNEKWqBQoiCogNDhYfZ-bIscBrZHsLdLVgku64XfgPnOA2W-NWgxuy7KeLsRFhaAt9rwjTWZsemQVmDIjX01g5WfwEEztffktDO4ytkZ__wt7j6_r4wnofUZ-o--zovqb9bXtb-Oee0JEIgML1Z5QlHV1_Lpt0zgE4lHYVA"
+                       alt="QR Code WhatsApp Pink Seoul Bites">
+                </div>
+                <div class="qr-hint">
+                  <span class="material-symbols-outlined">center_focus_strong</span>
+                  <span>SCAN VIA KAMERA PONSEL</span>
+                </div>
+              </div>
+
+              <p class="qr-desc">
+                Pindai QR ini dengan kamera ponsel untuk langsung membuka chat WhatsApp Dapur Pink Seoul Bites (<span class="text-tertiary-strong">+62 812-3456-7890</span>)
+              </p>
+
+              <div class="qr-divider"></div>
+
+              <div class="contact-list">
+
+                <a class="contact-item contact-item--link" href="https://instagram.com/mariapramstbulan" target="_blank" rel="noopener noreferrer">
+                  <div class="contact-item-icon contact-item-icon--primary">
+                    <span class="material-symbols-outlined">photo_camera</span>
+                  </div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">Instagram Resmi</span>
+                    <span class="contact-item-value contact-item-value--primary">@mariapramstbulan</span>
+                  </div>
+                </a>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon contact-item-icon--tertiary">
+                    <span class="material-symbols-outlined">schedule</span>
+                  </div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">Jam Operasional</span>
+                    <span class="contact-item-value">Selasa – Minggu: 10.00 – 20.00 WIB</span>
+                    <span class="contact-item-muted">(Senin libur istirahat dapur)</span>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-item-icon contact-item-icon--secondary">
+                    <span class="material-symbols-outlined">location_on</span>
+                  </div>
+                  <div class="contact-item-text">
+                    <span class="contact-item-label">Area Pengiriman &amp; Dapur</span>
+                    <span class="contact-item-value">Area Kota Baru &amp; Sekitar Kampus</span>
+                    <span class="contact-item-muted">Bisa dikirim via GoSend, GrabExpress, &amp; Kurir Lokal</span>
+                  </div>
+                </div>
+
+              </div>
+
+              <div class="contact-info-badge">
+                <span class="material-symbols-outlined">auto_awesome</span>
+                <span>Siap Melayani Dine-in Terbatas, Takeaway, &amp; Katering Syukuran</span>
+              </div>
+            </div>
+
+          </section>
+
+        </div>
+
+        <!-- ============ FAQ ============ -->
+        <section class="faq-section">
+          <div class="faq-header">
+            <span class="faq-eyebrow">Pusat Informasi</span>
+            <h2 class="faq-title">Pertanyaan yang Sering Diajukan (FAQ)</h2>
+            <p class="faq-desc">Semua hal yang perlu kamu ketahui sebelum memesan hidangan lezat Pink Seoul Bites.</p>
+          </div>
+
+          <div class="faq-grid">
+
+            <div class="faq-card">
+              <div class="faq-card-inner">
+                <div class="faq-icon faq-icon--primary">
+                  <span class="material-symbols-outlined">payments</span>
+                </div>
+                <div class="faq-body">
+                  <h3 class="faq-question">Bagaimana cara pembayaran pesanan?</h3>
+                  <p class="faq-answer">Kami mendukung pembayaran mudah via Transfer Bank (BCA, Mandiri), scan kode QRIS semua bank, dompet digital e-wallet (GoPay, OVO, ShopeePay), serta Cash saat pengambilan pesanan langsung di dapur.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-inner">
+                <div class="faq-icon faq-icon--tertiary">
+                  <span class="material-symbols-outlined">skillet</span>
+                </div>
+                <div class="faq-body">
+                  <h3 class="faq-question">Berapa lama waktu penyiapan pesanan?</h3>
+                  <p class="faq-answer">Semua hidangan dimasak fresh saat pesanan masuk agar hangat &amp; harum! Umumnya membutuhkan waktu sekitar 15–25 menit sebelum paket diserahkan ke driver kurir atau diambil sendiri.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-inner">
+                <div class="faq-icon faq-icon--secondary">
+                  <span class="material-symbols-outlined">health_and_safety</span>
+                </div>
+                <div class="faq-body">
+                  <h3 class="faq-question">Apakah makanan dijamin Halal?</h3>
+                  <p class="faq-answer">100% Halal! Kami hanya menggunakan pasta gochujang bersertifikasi halal, daging sapi dan ayam pilihan dari supplier terpercaya, serta bebas miras/alkohol masakan (no mirin/cheongju) maupun pengawet kimia.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-card">
+              <div class="faq-card-inner">
+                <div class="faq-icon faq-icon--primary">
+                  <span class="material-symbols-outlined">celebration</span>
+                </div>
+                <div class="faq-body">
+                  <h3 class="faq-question">Apakah melayani porsi katering / reuni?</h3>
+                  <p class="faq-answer">Tentu saja! Untuk pesanan di atas 10 porsi atau acara katering syukuran keluarga, mohon lakukan konfirmasi pesanan H-1 melalui WhatsApp admin agar kami dapat memberikan bonus menu serta harga paket spesial.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ============ FINAL CTA ============ -->
+        <section class="final-cta">
+          <div class="final-cta-banner">
+            <div class="final-cta-glow" aria-hidden="true"></div>
+
+            <div class="final-cta-content">
+              <div class="final-cta-chip">
+                <span class="material-symbols-outlined">phone_in_talk</span>
+                <span>Bantuan Cepat</span>
+              </div>
+              <h3 class="final-cta-title">Butuh Bantuan Cepat atau Ada Permintaan Khusus?</h3>
+              <p class="final-cta-desc">Admin dapur kami selalu siap membantu pertanyaan menu, katering custom, dan panduan rute ke dapur.</p>
+            </div>
+
+            <div class="final-cta-action">
+              <a class="btn btn--tertiary" href="https://wa.me/6281234567890?text=Halo%20Admin%20Pink%20Seoul%20Bites!%20Saya%20ingin%20tanya%20seputar%20menu%20dan%20pemesanan." target="_blank" rel="noopener noreferrer">
+                <span class="material-symbols-outlined">chat</span>
+                <span>Chat Admin Dapur Sekarang</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="site-footer">
+    <div class="footer-stripe"></div>
+    <div class="footer-inner">
+      <div class="footer-grid">
+
+        <div class="footer-brand">
+          <div class="brand">
+            <img class="brand-logo" src="https://lh3.googleusercontent.com/aida/ALJJyrBtdk_fqr7uC6SEBLY6_dywAt-elWcdIgrxGIhVssE0nt0I202XYrdADcmVh1sS3Vv-WyNi9DauBvzAkY-F3KMTolRkdTwY1ZMUSkyx2gv9Jg2FRQCtpUN4zXnsNVf9x581GCtIC6RHcG79aq15IK8iZFpsGxDrH5TlpoqlLJAUYK2XYEGb9JcDeaYZYQdLCyfOA_QD_4D9ht1nBUrPGhp2KuDiothgJq4Up60tlegMzIX6MADg2bVsbis" alt="Logo">
+            <div class="brand-text">
+              <span class="brand-name">Pink Seoul Bites</span>
+              <span class="brand-tagline">Dapur Masakan Rumah Korea</span>
+            </div>
+          </div>
+          <p class="footer-desc">Rasa Korea yang dimasak dengan hati, dari dapur kecil penuh kenangan. Menghadirkan hangatnya makanan rumahan Seoul di setiap gigitan manis dan gurih.</p>
+          <div class="footer-icons">
+            <span class="material-symbols-outlined">favorite</span>
+            <span class="material-symbols-outlined">cookie</span>
+            <span class="material-symbols-outlined">restaurant</span>
+            <span class="material-symbols-outlined">arrow_back_ios_new</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Tautan Menu</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="menu.html">Menu Autentik</a></li>
+            <li><a href="tentang-kami.html">Tentang Kami</a></li>
+            <li><a href="tim-kami.html">Tim Kami</a></li>
+            <li><a href="kontak.html">Kontak &amp; Pesan</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col footer-col--wide">
+          <h4 class="footer-heading">Jam &amp; Pesanan</h4>
+          <div class="footer-info">
+            <div class="info-item">
+              <span class="material-symbols-outlined info-icon">schedule</span>
+              <div>
+                <p class="info-label">Jam Operasional:</p>
+                <p>Selasa - Minggu: 10.00 - 20.00 WIB</p>
+                <p class="info-muted">(Senin Libur Istirahat Dapur)</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="material-symbols-outlined info-icon">photo_camera</span>
+              <div>
+                <p class="info-label">Instagram:</p>
+                <a href="#" class="info-link">@mariapramstbulan</a>
+              </div>
+            </div>
+            <div class="info-item">
+              <span class="material-symbols-outlined info-icon info-icon--tertiary">chat</span>
+              <div>
+                <p class="info-label">Pemesanan Cepat (WhatsApp):</p>
+                <a href="#" class="info-link info-link--tertiary">+62 812-3456-7890 (Chat Only)</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Pink Seoul Bites. Dibuat dengan cinta &amp; kenangan Ibu.</p>
+        <div class="footer-bottom-tag">
+          <span class="material-symbols-outlined">magic_button</span>
+          <span>Seoul street food &amp; comforting bites</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SCRIPTS ============ -->
+  <script>
+    let currentPortion = 1;
+
+    function adjustPortion(delta) {
+      currentPortion = Math.max(1, currentPortion + delta);
+      document.getElementById('portionDisplay').innerText = currentPortion;
+      document.getElementById('portionCount').value = currentPortion;
+    }
+
+    function selectDelivery(option) {
+      document.querySelectorAll('.delivery-option').forEach(opt => {
+        opt.classList.remove('delivery-option--active');
+        const radio = opt.querySelector('.delivery-radio');
+        radio.classList.remove('delivery-radio--active');
+      });
+
+      option.classList.add('delivery-option--active');
+      const radio = option.querySelector('.delivery-radio');
+      radio.classList.add('delivery-radio--active');
+      option.querySelector('input[type="radio"]').checked = true;
+
+      const type = option.getAttribute('data-delivery');
+      const addressWrapper = document.getElementById('addressWrapper');
+      const addressInput = document.getElementById('deliveryAddress');
+
+      if (type === 'pickup') {
+        addressWrapper.classList.add('address-wrapper--disabled');
+        addressInput.disabled = true;
+        addressInput.placeholder = "Ambil langsung di dapur (Tidak perlu alamat pengantaran)";
+      } else {
+        addressWrapper.classList.remove('address-wrapper--disabled');
+        addressInput.disabled = false;
+        addressInput.placeholder = "Jl. Mawar No. 12, Kost Putri Asri, Kamar 4B (Patokan depan minimarket)";
+      }
+    }
+
+    document.querySelectorAll('.delivery-option').forEach(opt => {
+      opt.addEventListener('click', () => selectDelivery(opt));
+    });
+
+    function submitToWhatsApp() {
+      const name = document.getElementById('customerName').value.trim();
+      const phone = document.getElementById('customerPhone').value.trim();
+      const menu = document.getElementById('menuSelection').value;
+      const portion = document.getElementById('portionCount').value;
+      const notes = document.getElementById('orderNotes').value.trim();
+      const deliveryMethod = document.querySelector('input[name="deliveryMethod"]:checked').value;
+      const address = document.getElementById('deliveryAddress').value.trim();
+
+      let message = `Halo Dapur Pink Seoul Bites! 🌸%0A%0A`;
+      message += `Saya ingin memesan hidangan hangat berikut:%0A`;
+      message += `• *Nama*: ${encodeURIComponent(name)}%0A`;
+      message += `• *No. WhatsApp*: ${encodeURIComponent(phone)}%0A`;
+      message += `• *Menu Pilihan*: ${encodeURIComponent(menu)}%0A`;
+      message += `• *Jumlah Porsi*: ${encodeURIComponent(portion)} porsi%0A`;
+
+      if (notes) {
+        message += `• *Catatan / Level Pedas*: ${encodeURIComponent(notes)}%0A`;
+      }
+
+      message += `• *Metode Pengiriman*: ${encodeURIComponent(deliveryMethod)}%0A`;
+
+      if (deliveryMethod.includes('Antar') && address) {
+        message += `• *Alamat Antar*: ${encodeURIComponent(address)}%0A`;
+      }
+
+      message += `%0AMohon info total rincian & waktu penyiapannya ya Kak. Terima kasih banyak! ✨`;
+
+      window.open(`https://wa.me/6281234567890?text=${message}`, '_blank');
+    }
+  </script>
+
+</body>
+</html>
